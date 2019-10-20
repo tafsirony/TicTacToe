@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         }
-        Button btnReset = findViewById(R.id.btn_reset);
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetGame();
-            }
-        });
+//        Button btnReset = findViewById(R.id.btn_reset);
+//        btnReset.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                resetGame();
+//            }
+//        });
     }
 
     @Override
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         if(player1Turn) {
-            ((Button) v).setText("");
+            ((Button) v).setText("X");
         }else {
             ((Button) v).setText("O");
         }
@@ -112,13 +112,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void player1Wins(){
         player1Points++;
-        Toast.makeText(this,"player 1 wins",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Player 1 wins",Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
     private void player2Wins(){
         player2Points++;
-        Toast.makeText(this,"player 2 wins",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Player 2 wins",Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
@@ -127,8 +127,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
     private void updatePointsText(){
-        textViewPlayer1.setText("player 1: "+player1Points);
-        textViewPlayer2.setText("player 2: "+player2Points);
+        textViewPlayer1.setText("Player 1: "+player1Points);
+        textViewPlayer2.setText("Player 2: "+player2Points);
     }
     private void resetBoard(){
         for(int i=0;i<3;i++) {
